@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Your Texts</h1>
+  <ul style="list-style: none;">
+    <% @tasks.each do |task| %>
+      <% if task.completed %>
+        <li><i class='fas fa-check-square' style= "margin: 5px 10px;"><p>  </p></i><%= link_to task.title, task_path(task)%></li>
+      <% else %>
+          <li><i class='far fa-square' style= "margin: 5px 10px;"></i><%= link_to task.title, task_path(task)%></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+
+  <%= link_to "Create a new task", tasks_new_path%>
+  </div>
+<!-- <i class="far fa-square"></i> EMPTY BOX
+<i class="fas fa-check-square"></i> CHECKED BOX -->
